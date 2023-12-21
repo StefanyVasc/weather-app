@@ -1,11 +1,13 @@
 import './styles/global.scss'
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from './Router'
 
 function App() {
 
   return (
-    <div>
-      TDS
-    </div>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   )
 }
 
