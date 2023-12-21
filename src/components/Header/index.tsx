@@ -1,6 +1,6 @@
 import { ArrowLeft } from '@phosphor-icons/react'
 import { NavLink } from 'react-router-dom'
-
+import './index'
 
 export function Header() {
 
