@@ -15,7 +15,7 @@ export function Router() {
           <Route
             key={cityData.id}
             path={`/${cityData.city.toLowerCase()}`}
-            element={<WeatherCity cityName={cityData.city} location={cityData.location} />}
+            element={<WeatherCity cityName={cityData.city} />}
           />
         ))}
 
