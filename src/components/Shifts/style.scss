@@ -1,5 +1,5 @@
 .shift__container{
-  margin-top: 1.25rem;
+  margin-top: 2.25rem;
   margin-bottom: 3.75rem;
   display: flex;
   align-items: center;
@@ -12,5 +12,24 @@
     justify-content: center;
     flex-direction: column;
     gap: .625rem;
+
+    p {
+      &:first-child {
+        text-transform: lowercase;
+      }
+    }
+  }
+
+  @media (max-width: 435px) {
+    gap: 1.7rem;
+
+    .shift__wrapper {
+      gap: 0;
+      padding: .125rem;
+
+      p:last-child {
+        font-size: 20px;
+      }
+    }
   }
 }

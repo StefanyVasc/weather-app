@@ -1,12 +1,5 @@
+import { ShiftsProps } from '../../@types/common';
 import './style.scss'
-
-interface ShiftsProps {
-  shifts: { 
-    temperature: number | string; 
-    period: string,
-    icon: string
-  }[];
-}
 
 export function Shifts({ shifts }: ShiftsProps) {
   return (
