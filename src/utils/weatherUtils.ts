@@ -1,28 +1,15 @@
-export interface HourData {
-  temp_c: number;
-  time: string;
-  condition: {
-    text: string;
-    icon: string;
-    code: number;
-  };
-  maxtemp_c: number;
-  mintemp_c: number
-  wind_mph: number;
-  humidity: number;
-}
+import { HourData } from "../@types/types";
 
-
-function formatTemperature(temperature: number | string): string  {
+function formatTemperature(temperature: number | string): string {
   return `${temperature}°C`;
 }
 
 function formatWindSpeed(windSpeed: number | undefined): string {
-  return windSpeed !== undefined ? `${windSpeed} m/s` : 'N/A';
+  return windSpeed ? `${windSpeed} m/s` : 'N/A';
 }
 
 function formatHumidity(humidity: number | undefined): string {
-  return humidity !== undefined ? `${humidity}%` : 'N/A';
+  return humidity ? `${humidity}%` : 'N/A';
 }
 
 function getPeriod(hourData: HourData | undefined): string {
@@ -35,7 +22,6 @@ function getPeriod(hourData: HourData | undefined): string {
   return 'Night';
 }
 
-
 export function getCurrentHourCondition(hours: HourData[] | undefined) {
   const currentHour = new Date().getHours();
   return hours?.find((hour) => new Date(hour.time).getHours() === currentHour);
@@ -46,13 +32,15 @@ export function getTemperatureForTime(hours: HourData[], targetHour: number): Ho
 }
 
 export function formatWeatherData(hourData: HourData | undefined) {
+  const { condition, temp_c, wind_mph, humidity } = hourData || {};
+  
   return {
-    condition: hourData?.condition.text || 'N/A',
-    temperature: formatTemperature(hourData?.temp_c || 'N/A'),
-    windSpeed: formatWindSpeed(hourData?.wind_mph),
-    humidity: formatHumidity(hourData?.humidity),
+    condition: condition?.text || 'N/A',
+    temperature: formatTemperature(temp_c || 'N/A'),
+    windSpeed: formatWindSpeed(wind_mph),
+    humidity: formatHumidity(humidity),
     period: getPeriod(hourData),
-    icon: hourData?.condition.icon || 'N/A',
+    icon: condition?.icon || 'N/A',
   };
 }
 
