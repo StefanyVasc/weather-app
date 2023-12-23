@@ -10,7 +10,6 @@ export function Router() {
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route index element={<Home />} />
-
         {cities.map((cityData: City) => (
           <Route
             key={cityData.id}
@@ -18,10 +17,8 @@ export function Router() {
             element={<WeatherCity cityName={cityData.city} />}
           />
         ))}
-
+        <Route path="*" element={<NotFound />} />
       </Route>
-      
-      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
