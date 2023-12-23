@@ -1,0 +1,24 @@
+.current__icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-height: 6.25rem;
+  height: 6.25rem;
+
+  .icon {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 435px) {
+    height: 7rem;
+  
+    .icon {
+      max-width: max-content;
+      height: 7rem;
+      width: 100%;
+    }
+  }
+}
+
+
