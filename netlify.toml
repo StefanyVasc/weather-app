@@ -1,0 +1,3 @@
+[build.environment]
+VITE_WEATHER_API_KEY=11c4862b07594ea6bd3231855232312
+VITE_BASE_URL=http://api.weatherapi.com/v1/forecast.json
