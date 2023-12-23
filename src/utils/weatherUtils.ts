@@ -6,7 +6,9 @@ export interface HourData {
     icon: string;
     code: number;
   };
-  wind_kph: number;
+  maxtemp_c: number;
+  mintemp_c: number
+  wind_mph: number;
   humidity: number;
 }
 
@@ -16,7 +18,7 @@ function formatTemperature(temperature: number | string): string  {
 }
 
 function formatWindSpeed(windSpeed: number | undefined): string {
-  return windSpeed !== undefined ? `${windSpeed} km/h` : 'N/A';
+  return windSpeed !== undefined ? `${windSpeed} m/s` : 'N/A';
 }
 
 function formatHumidity(humidity: number | undefined): string {
@@ -26,7 +28,7 @@ function formatHumidity(humidity: number | undefined): string {
 function getPeriod(hourData: HourData | undefined): string {
   const hourOfDay = new Date(hourData?.time || 0).getHours();
 
-  if (hourOfDay >= 0 && hourOfDay < 6) return 'Dawn';
+  if (hourOfDay < 6) return 'Dawn';
   if (hourOfDay < 12) return 'Morning';
   if (hourOfDay < 18) return 'Afternoon';
   
@@ -47,9 +49,10 @@ export function formatWeatherData(hourData: HourData | undefined) {
   return {
     condition: hourData?.condition.text || 'N/A',
     temperature: formatTemperature(hourData?.temp_c || 'N/A'),
-    windSpeed: formatWindSpeed(hourData?.wind_kph),
+    windSpeed: formatWindSpeed(hourData?.wind_mph),
     humidity: formatHumidity(hourData?.humidity),
     period: getPeriod(hourData),
+    icon: hourData?.condition.icon || 'N/A',
   };
 }
 
