@@ -1,7 +1,20 @@
-.header__container {
-  nav {
-    a > svg {
-      // fill: 
+@import '../../styles/variables.scss';
+
+@mixin cityFill($city, $color) {
+  &-#{$city} {
+    svg {
+      fill: $color;
     }
+  }
+}
+
+.header__container {
+  .city {
+    @include cityFill(dallol, $color-dallol-font);
+    @include cityFill(fairbanks, $color-fairbanks-font);
+    @include cityFill(london, $color-london-font);
+    @include cityFill(recife, $color-recife-font);
+    @include cityFill(vancouver, $color-vancouver-font);
+    @include cityFill(yakutsk, $color-yakutsk-font);
   }
 }
