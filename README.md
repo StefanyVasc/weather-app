@@ -30,7 +30,9 @@ Diferenciais:
 WIP
 
 ### Principais dificuldades:
-- lidar com `.env` e erro de `process`. Não consegui resolver e a key da api está indo dentro do código mesmo.
+- lidar com `.env` e erro de `process`. Não consegui resolver e a key da api está indo dentro do código mesmo. 
+  - foi resolvido!! O vite usa a nomeclatura `VITE_` nas variaveis ambientes e elas devem ser acessadas `import.meta.env.VITE_SUA_VARIAVEL`.
+  - Da mesma forma deve ser setado no enviroments do Netlify
 
 - arquivo de com funções auxiliares pra formatar os dados vindo da api, o typescript deixou bem complicado e verboso.
 
