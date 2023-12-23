@@ -1,0 +1,16 @@
+.shift__container{
+  margin-top: 1.25rem;
+  margin-bottom: 3.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.875rem;
+
+  .shift__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .625rem;
+  }
+}
