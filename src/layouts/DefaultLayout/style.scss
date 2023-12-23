@@ -1,12 +1,44 @@
+@import '../../styles/variables.scss';
+
 .layout-container {
   max-width: 74rem;
   height: calc(100vh - 10rem);
   margin: 5rem auto;
   padding: 2.5rem;
 
-  color: var(--white);
   border-radius: 8px;
 
   display: flex;
   flex-direction: column;
+
+}
+
+
+@mixin city-styles($light, $dark, $font) {
+  background: linear-gradient(to top, $light, $dark);
+  color: $font;
+}
+
+body.city-dallol {
+  @include city-styles($color-dallol-light, $color-dallol-dark, $color-dallol-font);
+}
+
+body.city-fairbanks {
+  @include city-styles($color-fairbanks-light, $color-fairbanks-dark, $color-fairbanks-font);
+}
+
+body.city-london {
+  @include city-styles($color-london-light, $color-london-dark, $color-london-font);
+}
+
+body.city-recife {
+  @include city-styles($color-recife-light, $color-recife-dark, $color-recife-font);
+}
+
+body.city-vancouver {
+  @include city-styles($color-vancouver-light, $color-vancouver-dark, $color-vancouver-font);
+}
+
+body.city-yakutsk {
+  @include city-styles($color-yakutsk-light, $color-yakutsk-dark, $color-yakutsk-font);
 }
