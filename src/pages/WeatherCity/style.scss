@@ -1,19 +1,31 @@
-
 .weather-city__container {
+  height: inherit;
 
   .weather__current {
-      width: 100%;
-
-    .current__status {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      margin: 1.25rem auto;
-
-    }
-
+    width: 100%;
   }
 
+  @media (max-width: 435px) {
+    height: 100vh;
+    overflow-y: hidden;
+    
+    .weather__current {
+      margin-top: 4.5rem;
+      height: 100vh; 
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .current__icon {
+        height: 7rem;
+
+        .icon {
+          max-width: max-content;
+          height: 7rem;
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
