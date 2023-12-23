@@ -1,7 +1,7 @@
 import { GlobeHemisphereEast } from '@phosphor-icons/react';
 import { NavLink } from 'react-router-dom';
-import './style.scss';
 import { cities, City } from '../../utils/cities';
+import './style.scss';
 
 export function Home() {
 
@@ -20,6 +20,7 @@ export function Home() {
               key={item.id}
               to={`/${item.city.toLowerCase()}`}
               className="custom-link"
+              
             >
               {item.city}
             </NavLink>

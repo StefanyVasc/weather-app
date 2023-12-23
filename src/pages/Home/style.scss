@@ -42,6 +42,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     align-items: stretch;
+
+    .custom-link { 
+      color: #fff;
+      text-align: center;
+    }
+
+    
   }
 
 }
