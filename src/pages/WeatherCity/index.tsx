@@ -47,6 +47,7 @@ export function WeatherCity({ cityName }: WeatherCityProps) {
       }
     };
 
+    
     fetchData();
   }, [cityName]);
 
