@@ -1,15 +1,13 @@
 import { ArrowDown, ArrowUp } from "@phosphor-icons/react";
+import { TemperatureProps } from "../../@types/common";
 import './style.scss'
 
+export function Temperature({ 
+  maxTemperature,
+  minTemperature,
+  currentTemperature
+}: TemperatureProps) {
 
-
-interface TemperatureProps {
-  maxTemperature: number | string;
-  minTemperature: number | string;
-  currentTemperature: number | string;
-}
-
-export function Temperature({ maxTemperature, minTemperature, currentTemperature }: TemperatureProps) {
   return (
     <div className="temperatures">
       <span className="temperatures__current">
@@ -24,16 +22,15 @@ export function Temperature({ maxTemperature, minTemperature, currentTemperature
 
         <div className="temperature__partials">
           <div className="partials__max">
-            <ArrowUp size={20}/>
+            <ArrowUp size={16} weight="thin"/>
             <p>{maxTemperature}°</p>
           </div>
+          
           <div className="partials__min">
-            <ArrowDown size={20} />
+            <ArrowDown size={16} weight="thin"/>
             <p>{minTemperature}°</p> 
           </div>
-
         </div>
-        
       </div>
     </div>
   )

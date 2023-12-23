@@ -2,45 +2,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: .625rem;
+  max-height: 6.25rem;
   
-  .temperatures__current {
-    font-size: 150px;
+  &__current {
+    font-size: 6.5rem;
     font-weight: 200;
-    line-height: 1;
+    line-height: 1.2;
   }
   
-  .temperatures__wrapper {
+  &__wrapper {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    height: 6.875rem;
+    height: 6rem;
 
-    .temperature__unity {
-      font-size: 30px;
-      font-weight: 100;
-    }
-
-    .temperature__partials {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-
-      .partials__max, 
-      .partials__min {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        font-weight: 200;
-
-        svg {
-          fill: var(--dark-sand)
-        }
-
+    .temperature {
+      &__unity {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 10px;
       }
 
+      &__partials {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+  
+        .partials__max, 
+        .partials__min {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          font-weight: 300;
+        }
+      }
     }
-
-    
-
   }
 }
