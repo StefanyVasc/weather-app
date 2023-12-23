@@ -4,8 +4,7 @@ import './style.scss'
 export function DefaultLayout() {
   return (
     <div className="layout-container">
-    <Outlet />
-  </div>
-);
+      <Outlet />
+    </div>
+  );
 }
-

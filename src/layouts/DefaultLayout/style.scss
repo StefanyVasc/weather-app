@@ -5,11 +5,14 @@
   height: calc(100vh - 10rem);
   margin: 5rem auto;
   padding: 2.5rem;
-
-  border-radius: 8px;
-
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 435px) {
+    height: 100vh;
+    margin: 0;
+    padding: 1rem;
+  }
 
 }
 
