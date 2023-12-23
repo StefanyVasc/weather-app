@@ -1,19 +1,23 @@
-:root {
-  --white: #FFFFFF;
-  --white-2: #F8F8F8;
-  --black: #1F1F1F;
-  --black-2: #0F0F0F;
+$color-dallol-light: rgba(82, 60, 83, 1);
+$color-dallol-dark: rgba(196, 187, 195, 1);
+$color-dallol-font: #1F1F1F;
 
-  --light-blue: #B7E7EF;
-  --middle-blue: #57CBDC;
-  --dark-blue: #3BA1B5;
+$color-fairbanks-light: rgba(60, 83, 72, 1);
+$color-fairbanks-dark: rgba(187, 196, 190, 1);
+$color-fairbanks-font: #1F1F1F;
 
-  --light-gray: #BBBEC4;
-  --middle-gray: #616978;
-  --dark-gray: #3C4353;
+$color-london-light: rgba(59, 161, 181, 1);
+$color-london-dark: rgba(183, 231, 239, 1);
+$color-london-font: #1F1F1F;
 
-  --light-sand: #E1E1E1;
-  --middle-sand: #A6A6A6;
-  --dark-sand: #6D6D6D;
+$color-recife-light: rgba(60, 67, 83, 1);
+$color-recife-dark: rgba(187, 190, 196, 1);
+$color-recife-font: #1F1F1F;
 
-}
+$color-vancouver-light: rgba(109, 109, 109, 1);
+$color-vancouver-dark: rgba(225, 225, 225, 1);
+$color-vancouver-font: #1F1F1F;
+
+$color-yakutsk-light: rgba(83, 60, 60, 1);
+$color-yakutsk-dark: rgba(196, 187, 187, 1);
+$color-yakutsk-font: #1F1F1F;
