@@ -1,12 +1,12 @@
 import axios from 'axios';
-import { API_KEY} from '../../utils/config';
+import { API_KEY, WEATHER_API_URL } from '../../utils/config';
 import { format } from 'date-fns';
 import { logError } from '../../utils/errorUtils';
 
 export const buildApiUrl = (cityName: string): string => {
   const today = new Date();
   const formattedDate = format(today, 'yyyy-MM-dd');
-  return `http://api.weatherapi.com/v1/forecast.json?key=4f4e2ab84aa84297a37221347232112&q=${cityName}&dt=${formattedDate}&hour=3,9,15,21`;
+  return `${WEATHER_API_URL}?key=${API_KEY}&q=${cityName}&dt=${formattedDate}&hour=3,9,15,21`;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
