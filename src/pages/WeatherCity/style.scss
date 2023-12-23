@@ -1,0 +1,19 @@
+
+.weather-city__container {
+
+  .weather__current {
+      width: 100%;
+
+    .current__status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 1.25rem auto;
+
+    }
+
+  }
+
+}
+
