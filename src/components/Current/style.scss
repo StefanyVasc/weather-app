@@ -1,0 +1,19 @@
+.current__status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1.25rem auto;
+  text-transform: uppercase;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 400;
+  }
+
+  span {
+    font-size: 1.25rem;
+    margin-top: .3125rem;
+    font-weight: 300;
+  }
+}
