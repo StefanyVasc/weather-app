@@ -1,4 +1,4 @@
-import { HourData } from "../@types/types";
+import { HourData } from "../@types/common";
 
 function formatTemperature(temperature: number | string): string {
   return `${temperature}°C`;
