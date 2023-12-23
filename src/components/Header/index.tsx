@@ -3,22 +3,19 @@ import { NavLink } from 'react-router-dom'
 import './style.scss'
 
 interface HeaderProps {
-  selectedCity: string;
+  cityName: string;
 }
 
-export function Header({ selectedCity }: HeaderProps) {
+export function Header({ cityName }: HeaderProps) {
 
-  
+  const cityClass = cityName.toLowerCase()
   return(
     <header className='header__container'>
-      <nav>
+      <nav className={`city-${cityClass}`}>
         <NavLink to="/">
           <ArrowLeft size={32} />
-          {selectedCity}
         </NavLink>
       </nav>
     </header>
-    
   )
-  
 }
