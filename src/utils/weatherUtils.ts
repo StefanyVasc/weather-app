@@ -1,34 +1,30 @@
 import { HourData } from "../@types/common";
 
-function formatTemperature(temperature: number | string): string {
-  return `${temperature}°C`;
-}
-
-function formatWindSpeed(windSpeed: number | undefined): string {
-  return windSpeed ? `${windSpeed} m/s` : 'N/A';
-}
-
-function formatHumidity(humidity: number | undefined): string {
-  return humidity ? `${humidity}%` : 'N/A';
+function formatValue(value: number | string | undefined, suffix: string): string {
+  return value != null ? `${value}${suffix}` : 'N/A';
 }
 
 function getPeriod(hourData: HourData | undefined): string {
   const hourOfDay = new Date(hourData?.time || 0).getHours();
 
-  if (hourOfDay < 6) return 'Dawn';
-  if (hourOfDay < 12) return 'Morning';
-  if (hourOfDay < 18) return 'Afternoon';
-  
-  return 'Night';
+  if (hourOfDay >= 21 || hourOfDay < 3) return 'Night';
+  if (hourOfDay >= 15) return 'Afternoon';
+  if (hourOfDay >= 9) return 'Morning';
+
+  return 'Dawn';
 }
 
 export function getCurrentHourCondition(hours: HourData[] | undefined) {
   const currentHour = new Date().getHours();
-  return hours?.find((hour) => new Date(hour.time).getHours() === currentHour);
+  const getHourFromTime = ({ time }: HourData) => new Date(time).getHours();
+
+  return hours?.find((hour) => getHourFromTime(hour) === currentHour);
 }
 
 export function getTemperatureForTime(hours: HourData[], targetHour: number): HourData | undefined {
-  return hours.find((hour) => new Date(hour.time).getHours() === targetHour);
+  const getHourFromHourData = ({ time }: HourData) => new Date(time).getHours();
+  
+  return hours.find((hour) => getHourFromHourData(hour) === targetHour);
 }
 
 export function formatWeatherData(hourData: HourData | undefined) {
@@ -36,9 +32,9 @@ export function formatWeatherData(hourData: HourData | undefined) {
   
   return {
     condition: condition?.text || 'N/A',
-    temperature: formatTemperature(temp_c || 'N/A'),
-    windSpeed: formatWindSpeed(wind_mph),
-    humidity: formatHumidity(humidity),
+    temperature: formatValue(temp_c, '°C'),
+    windSpeed: formatValue(wind_mph, ' m/s'),
+    humidity: formatValue(humidity, '%'),
     period: getPeriod(hourData),
     icon: condition?.icon || 'N/A',
   };

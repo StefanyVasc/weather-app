@@ -11,6 +11,7 @@ export function Infos({windSpeed, sunrise, sunset, humidity}: InfosProps){
         </div>
         <span className='separator'/>
       </div>
+
       <div className="info__wrapper">
         <div className='item'>
           <span>sunrise</span>
@@ -18,14 +19,15 @@ export function Infos({windSpeed, sunrise, sunset, humidity}: InfosProps){
         </div>
         <span className='separator'/>
       </div>
+
       <div className="info__wrapper">
         <div className='item'>
           <span>sunset</span>
           <span>{sunset}</span>
         </div>
         <span className='separator'/>
-
       </div>
+
       <div className="info__wrapper">
         <div className='item'>
           <span>humidity</span>
@@ -33,7 +35,6 @@ export function Infos({windSpeed, sunrise, sunset, humidity}: InfosProps){
         </div>
         <span className='separator'/>
       </div>
-
     </div>
   )
 }
