@@ -26,18 +26,15 @@ Observações:
 Diferenciais:
   - Rodar a aplicação fazendo o uso de um container do Docker
 
-### Preview
-WIP
 
 ### Principais dificuldades:
-- lidar com `.env` e erro de `process`. Não consegui resolver e a key da api está indo dentro do código mesmo. 
-  - foi resolvido!! O vite usa a nomeclatura `VITE_` nas variaveis ambientes e elas devem ser acessadas `import.meta.env.VITE_SUA_VARIAVEL`.
-  - Da mesma forma deve ser setado no enviroments do Netlify
+- lidar com `.env` e erro de `process`. O vite usa a nomeclatura `VITE_` nas variaveis ambientes e elas devem ser acessadas da seguinte forma `import.meta.env.VITE_SUA_VARIAVEL`. No enviroments do Netlify as variaveis devem ser setadas do mesmo modo.
 
 - arquivo de com funções auxiliares pra formatar os dados vindo da api, o typescript deixou bem complicado e verboso.
 
 - retorno dos dados da api
   - como pegar o clima relacionado a hora atual.
+
 - mudar esquema de cores de acordo com a rota
 
 https://www.weatherapi.com/api-explorer.aspx#future
